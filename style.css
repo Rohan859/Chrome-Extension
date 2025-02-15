@@ -23,3 +23,12 @@ button{
     padding: 10px 20px 10px 20px;
     border: none;
 }
+
+
+
+div{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1.5px solid #5f9341;
+    background-color: #f9f9f9;
+}
