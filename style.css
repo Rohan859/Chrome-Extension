@@ -22,7 +22,7 @@ button{
     font-size:medium;
     font-weight: bold;
     padding: 10px 20px 10px 20px;
-    border: none;
+    border: 1.5px solid #5f9341;
 }
 
 
@@ -40,5 +40,11 @@ li{
 }
 
 a{
+    color: #5f9341;
+}
+
+
+#delete-btn{
+    background-color: white;
     color: #5f9341;
 }
