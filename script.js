@@ -8,7 +8,6 @@ let localStorageArr = JSON.parse(localStorage.getItem('input-ele'));
 if(localStorageArr) 
 {
     inputArr = localStorageArr;
-    console.log(inputArr);
     render();
 }
 
