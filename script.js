@@ -20,14 +20,17 @@ buttonEl.removeEventListener('click', () => {}
 );
 
 
-
 function render() {
     let localStorageArr = JSON.parse(localStorage.getItem('input-ele'));
-    let li = document.createElement('li');
+    displayEl.innerHTML = ''; // Clear previous list items
 
-    for(let key in localStorageArr)
-    {
-        li.textContent = localStorageArr[key];
+    for (let key in localStorageArr) {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = localStorageArr[key].startsWith('https') ? localStorageArr[key] : `https://${localStorageArr[key]}`;
+        a.textContent = localStorageArr[key];
+        a.target = '_blank';
+        li.appendChild(a);
         displayEl.appendChild(li);
     }
 }
