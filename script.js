@@ -1,6 +1,7 @@
 let inputEl = document.getElementById('input-el');
 let buttonEl = document.getElementById('input-btn');
 let displayEl = document.getElementById('display-el')
+let deleteBtn = document.getElementById('delete-btn');
 let inputArr = [];
 let localStorageArr = JSON.parse(localStorage.getItem('input-ele'));
 
@@ -37,4 +38,13 @@ function render() {
         displayEl.appendChild(li);
     }
 }
+
+
+deleteBtn.addEventListener('click', () => {
+    localStorage.clear();
+    inputArr = [];
+    render();
+});
+
+
 
