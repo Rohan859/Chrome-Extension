@@ -3,8 +3,13 @@
     "name": "My Chrome Extension",
     "version": "1.0",
     "description": "A description of my Chrome extension.",
+    "permissions": ["tabs","activeTab"],
     "action": {
         "default_popup": "index.html",
         "default_icon": "note-taking.png"
-    }
+    },
+    "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
 }

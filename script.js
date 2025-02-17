@@ -2,7 +2,9 @@ let inputEl = document.getElementById('input-el');
 let buttonEl = document.getElementById('input-btn');
 let displayEl = document.getElementById('display-el')
 let deleteBtn = document.getElementById('delete-btn');
+let saveTabBtn = document.getElementById('save-tab-btn');
 let inputArr = [];
+
 let localStorageArr = JSON.parse(localStorage.getItem('input-ele'));
 
 
@@ -47,4 +49,12 @@ deleteBtn.addEventListener('click', () => {
 });
 
 
+saveTabBtn.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        let activeTab = tabs[0];
+        inputArr.push(activeTab.url);
+        localStorage.setItem('input-ele', JSON.stringify(inputArr));
+        render();
+    });
+});
 
